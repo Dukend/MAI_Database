@@ -1,0 +1,15 @@
+SELECT c.idc, COUNT(p.idpas) as pas_count;
+FROM Passangers p, Tickets t, Flights f, Company c;
+WHERE p.idpas = t.passenger AND f.idf = t.flight AND f.company = c.idc;
+ORDER BY pas_count DESC;
+GROUP BY c.idc;
+INTO CURSOR popularity;
+
+SELECT c.idc;
+FROM Company c, Tickets t, Flights f, Passangers p;
+WHERE p.idpas = t.passenger AND f.idf = t.flight AND f.company = c.idc AND p.rat > 75;
+INTO CURSOR premium;
+
+SELECT popularity.idc;
+FROM popularity;
+WHERE popularity.idc IN (SELECT premium.idc FROM premium);

@@ -1,0 +1,10 @@
+SELECT Flights.company, COUNT(Flights.idf) AS idf_count;
+ FROM ;
+     Flights;
+ GROUP BY Flights.company;
+ INTO CURSOR t  
+ 
+SELECT name, t.idf_count as count;
+FROM Company, t;
+WHERE idc = t.company;
+AND t.idf_count = (SELECT MAX(t.idf_count) FROM t)

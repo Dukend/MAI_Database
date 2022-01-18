@@ -1,0 +1,10 @@
+SELECT P1.idpas AS idp1, P1.name AS n1, P1.surname AS s1,;
+  P2.idpas AS idp2, P2.name AS n2, P2.surname AS s2;
+ FROM ;
+     Tickets F1,;
+    Passangers P1,;
+    Passangers P2,;
+    Tickets F2;
+ WHERE	F1.passanger = P1.idpas AND F2.passanger = P2.idpas;
+		AND F1.flight = F2.flight;
+		AND  P1.idpas > P2.idpas;

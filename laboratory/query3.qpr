@@ -1,0 +1,4 @@
+SELECT p.name, p.surname, p.rating;
+FROM Passangers p;
+WHERE p.sex = 'M' AND p.rating > ANY (SELECT p.rating FROM Passangers p WHERE p.sex = 'F');
+

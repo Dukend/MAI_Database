@@ -1,0 +1,9 @@
+SELECT Tt.passenger;
+ FROM ;
+     Tickets Tt;
+ WHERE  Tt.flight IN (SELECT f1.idf FROM Flights as f1 WHERE company = 1);
+ INTO CURSOR t1  
+ 
+SELECT p.idpas, p.name, p.surname;
+FROM Passangers p;
+WHERE p.idpas NOT IN (SELECT t1.passenger FROM t1)
