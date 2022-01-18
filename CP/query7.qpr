@@ -1,0 +1,8 @@
+SELECT c.idc, c.name, COUNT(p.idp) AS plane_count;
+FROM Company c, Flights f, Plane p;
+WHERE c.idc = f.company AND f.plane = p.idp;
+GROUP BY c.idc, c.name;
+INTO CURSOR t;
+
+SELECT t.idc, t.name, 10-t.plane_count;
+FROM t;

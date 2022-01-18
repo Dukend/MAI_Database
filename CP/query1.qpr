@@ -1,0 +1,15 @@
+SELECT F1.flight AS flight_number, P1.idpas AS passanger_number_1,;
+  P1.name AS name_1, P1.surname AS surname_1,;
+  P2.idpas AS passanger_number_2, P2.name AS name_2,;
+  P2.surname AS surname_2;
+ FROM ;
+     Tickets F1,;
+    Passangers P1,;
+    Passangers P2,;
+    Tickets F2;
+ WHERE ( (  F1.passenger = P1.idpas;
+   AND  F2.passenger = P2.idpas );
+   AND  F1.flight = F2.flight );
+   AND  P1.idpas > P2.idpas;
+ ORDER BY F1.flight, P1.idpas, P2.idpas
+
